@@ -9,13 +9,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+/**
+ * Servlet Afegir per inserir nous llibres a la base de dades.
+ * 
+ * URL Mapejada: /Afegir
+ * 
+ * @author Leticia Campos
+ */
 @WebServlet("/Afegir")
 public class Afegir extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-
+    /**
+     * Mètode doPost per inserir un nou llibre.
+     *
+     * @param request Petició HTTP
+     * @param response Resposta HTTP
+     * @throws ServletException si ocorre un error de servlet
+     * @throws IOException si ocorre un error d'entrada/sortida
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String titol = request.getParameter("titol");
         String isbn = request.getParameter("isbn");
@@ -37,3 +50,4 @@ public class Afegir extends HttpServlet {
         response.sendRedirect("Consulta");
     }
 }
+
