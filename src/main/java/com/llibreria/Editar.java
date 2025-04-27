@@ -10,12 +10,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Servlet Editar per modificar llibres existents.
+ * 
+ * URL Mapejada: /Editar
+ * 
+ * @autor Leticia Campos
+ */
 @WebServlet("/Editar")
 public class Editar extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-
+    /**
+     * Mètode doPost per actualitzar un llibre.
+     *
+     * @param request Petició HTTP
+     * @param response Resposta HTTP
+     * @throws ServletException si ocorre un error de servlet
+     * @throws IOException si ocorre un error d'entrada/sortida
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         String titol = request.getParameter("titol");
@@ -39,3 +53,4 @@ public class Editar extends HttpServlet {
         response.sendRedirect("Consulta");
     }
 }
+
